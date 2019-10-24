@@ -16,7 +16,7 @@ var orm = {
 	// SQL to add a burger
 	insertOne: function(strBurger, callback) {
 		// Run the SQL
-		connection.query("INSERT INTO burgers ('burger_name', 'devoured') VALUES ('" + strBurger + "', 0)", function(err, res) {
+		connection.query("INSERT INTO burgers(burger_name, devoured) VALUES('" + strBurger + "', 0)", function(err, res) {
 			if (err) {
 				throw err;
 			};
@@ -27,7 +27,8 @@ var orm = {
 	// SQL to update when we eat a burger
 	updateOne: function(strWhere, callback) {
 		// Perform the database query
-		connection.query("UPDATE burgers SET devoured = '1' WHERE " + strWhere, function(err, res) {
+		console.log ("UPDATE burgers SET devoured = 1 WHERE " + strWhere);
+		connection.query("UPDATE burgers SET devoured = 1 WHERE " + strWhere, function(err, res) {
 			if (err) {
 				throw err;
 			};

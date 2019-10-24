@@ -11,10 +11,10 @@ var connection = mysql.createConnection({
 // Make the connection to MySQL
 connection.connect(function(err) {
     if (err) {
-      console.error('ERROR: MySQL connection error -- ' + err.stack + '\n\n');
+      console.error("ERROR: MySQL connection error -- " + err.stack + "\n\n");
       return;
     }
-    console.log('Connected to MySQL database as id ' + connection.threadId + '\n\n');
+    console.log("Burger Bonanza is running" + "\n\n");
   });
   
   // Export connection for ORM use
