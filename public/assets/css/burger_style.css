@@ -69,3 +69,8 @@ html {
  .addBurgerButton:active {
     background-color: green;
  }
+
+ .addBurgerButton:hover {
+    background-color: green;
+    color: white;
+}

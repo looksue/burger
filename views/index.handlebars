@@ -9,7 +9,7 @@
         {{#unless this.devoured}}
         <div>
           <form action="/burgers/{{this.burgers_id}}?_method=PUT" method="post">
-            <button type="submit" class="burgerAvailable">Eat Da Burger</button>
+            <button type="submit" class="burgerAvailable">Eat Burger</button>
             {{this.burgers_id}}. {{this.burger_name}}
             <!-- adding a hidden input field named _method, with value PUT -->
             <input type="hidden" name="_method" value="PUT">
