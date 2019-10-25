@@ -8,7 +8,7 @@ html {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background-color: lightyellow;
+    background-color: #FAFAD2;
  }
  
  #burger {
