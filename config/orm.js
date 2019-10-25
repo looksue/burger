@@ -27,7 +27,6 @@ var orm = {
 	// SQL to update when we eat a burger
 	updateOne: function(strWhere, callback) {
 		// Perform the database query
-		console.log ("UPDATE burgers SET devoured = 1 WHERE " + strWhere);
 		connection.query("UPDATE burgers SET devoured = 1 WHERE " + strWhere, function(err, res) {
 			if (err) {
 				throw err;

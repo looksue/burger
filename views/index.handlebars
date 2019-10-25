@@ -3,28 +3,32 @@
 <main>
   <div class="container">
     <div class="row">
-      <div class="col s6">
+      <div class="col-sm-6">
+        <p class="colHeading">Burgers to Eat</p>
         {{#each burgers}}
-          {{#unless this.devoured}}
-            <div>
-              <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
-                {{this.burger_name}}
-                <button type="submit" class="burgerAvailable">Eat Da Burger</button>
-              </form>
-            </div>
-          {{/unless}}
+        {{#unless this.devoured}}
+        <div>
+          <form action="/burgers/{{this.burgers_id}}?_method=PUT" method="post">
+            <button type="submit" class="burgerAvailable">Eat Da Burger</button>
+            {{this.burgers_id}}. {{this.burger_name}}
+            <!-- adding a hidden input field named _method, with value PUT -->
+            <input type="hidden" name="_method" value="PUT">
+          </form>
+        </div>
+        {{/unless}}
         {{/each}}
       </div>
 
-      <div class="col s6">
+      <div class="col-sm-6">
+        <p class="colHeading">Burgers Eaten</p>
         {{#each burgers}}
-          {{#if this.devoured}}
-            <div class="burgerEaten">
-              <div>
-                {{this.burger_name}}
-              </div>
-            </div>
-          {{/if}}
+        {{#if this.devoured}}
+        <div class="burgerEaten">
+          <div>
+            {{this.burgers_id}}. {{this.burger_name}}
+          </div>
+        </div>
+        {{/if}}
         {{/each}}
       </div>
     </div>
@@ -34,7 +38,7 @@
 <h2>Add A Burger</h2>
 
 <div class="row">
-  <div class="col s12">
+  <div class="col s12" style="clear:both">
     <form action="/burgers" method="POST">
       <input type="text" id="name" name="burger_name" placeholder="Burger to Add">
       <button type="submit" class="addBurgerButton">Add Burger</button>
